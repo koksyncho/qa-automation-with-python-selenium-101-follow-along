@@ -14,7 +14,15 @@ def to_digits(n):
     while n:
         digitList.append(n % 10)
         n = n // 10
-    return digitList
+    return list(reversed(digitList))
+
+def to_number(digits):
+    number = 0
+    multiplier = 1
+    for i in reversed(digits):
+        number += i * multiplier
+        multiplier *= 10
+    return number
 
 def count_vowels(str):
     vowels = list("aeiouyAEIOUY")
@@ -60,9 +68,9 @@ def fibonacci(n):
 
 def fib_number(n):
     fibNumber = ''.join(str(elem) for elem in fibonacci(n))
-    return fibNumber
+    return int(fibNumber)
 
-def palidrome(n):
+def palindrome(n):
     input = str(n)
     reverseInput = reversed(input)
     if list(input) == list(reverseInput):
@@ -81,12 +89,13 @@ def char_histogram(string):
 
 if __name__ == "__main__":
     print(sum_of_digits(914))
-    print(to_digits(123151))
+    print(to_digits(123))
+    print(to_number([3,2,1]))
     print(count_vowels("AOFKQOJpasidoiqpe"))
     print(count_consonants("Hello this is a test sentence"))
     print(prime_number(11))
     print(fact_digits(9))
     print(fibonacci(9))
     print(fib_number(9))
-    print(palidrome("abba"))
+    print(palindrome("abba"))
     print(char_histogram("asdhoqodah"))
