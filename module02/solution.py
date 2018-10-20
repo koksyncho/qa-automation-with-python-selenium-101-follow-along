@@ -1,3 +1,16 @@
+IS_TRUE = True
+IS_FALSE = False
+
+PANCAKE_INGREDIENTS = {
+    "flour": 2,
+    "eggs": 4,
+    "milk": 200,
+    "butter": False,
+    "salt": 0.001
+}
+
+FIBONACCI_NUMBERS = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+
 def num_add(a, b):
     add = a + b
     return add
@@ -54,15 +67,11 @@ def fib_exists(lst, n):
 
 def which_fib(lst, n):
     if (n in lst):
-        return lst.index(n)
-    else:
-        return (-1)
+        return (lst.index(n)+1)
 
 if __name__ == "__main__":
     c = 7
     d = 5
-    IS_TRUE = True
-    IS_FALSE = False
     print(num_add(c, d))
     print(num_sub(c, d))
     print(num_mul(c, d))
@@ -70,13 +79,6 @@ if __name__ == "__main__":
     print(num_floor(c, d))
     print(num_rem(c, d))
 
-    PANCAKE_INGREDIENTS = {
-        "flour": 2,
-        "eggs": 4,
-        "milk": 200,
-        "butter": False,
-        "salt": 0.001
-    }
     print(PANCAKE_INGREDIENTS)
     print(ingredient_exists("eggs", PANCAKE_INGREDIENTS))
 
@@ -87,9 +89,10 @@ if __name__ == "__main__":
     remove_salt(PANCAKE_INGREDIENTS)
     print(PANCAKE_INGREDIENTS)
 
-    FIBONACCI_NUMBERS = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
     print(FIBONACCI_NUMBERS)
-    FIBONACCI_NUMBER = add_fibonacci(FIBONACCI_NUMBERS)
-    print(FIBONACCI_NUMBER)
-    print(fib_exists(FIBONACCI_NUMBER, 5))
-    print(which_fib(FIBONACCI_NUMBER, 5))
+    FIBONACCI_NUMBERS = add_fibonacci(FIBONACCI_NUMBERS)
+    print(FIBONACCI_NUMBERS)
+    print(fib_exists(FIBONACCI_NUMBERS, 5))
+    print(which_fib([1, 1], 2))
+
+    ''' errors in add_sugar(), remove_salt(), and which_fib() '''
